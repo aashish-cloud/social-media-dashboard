@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: hsl(230, 17%, 14%);
+}
+
+/* Dark Mode Color Scheme */
+
+.dark-mode-body {
+  background-color: hsl(230, 17%, 14%);
+  color: hsl(0, 0%, 100%);
+}
+
+.dark-mode-card {
+  background-color: hsl(228, 28%, 20%);
+}
+
+.dark-mode-card:hover {
+  background-color: rgba(174, 179, 203, .1);
+}
+
+.text-dark {
+  color: hsl(228, 34%, 66%);
+}
+
+/* Light Mode Color Scheme  */
+
+.text-light {
+  color: hsl(228, 12%, 44%);
+}
+
+/* Parent Container */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1% 0;
+}
+
+.navbar {
+  display: flex;
+  width: 85%;
+  margin: 20px;
+  font-weight: 700;
+}
+
+.heading {
+  font-size: 2rem;
+}
+
+.toggle-button {
+  display: flex;
+  margin-left: auto;
+  align-self: center;
+}
+
+.toggle-button p {
+  align-self: center;
+  margin-right: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(230, 22%, 74%);
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  right: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider:hover {
+  background-image: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+input:checked + .slider {
+  background-image: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+input:checked + .slider:before {
+  transform: translateX(-29px);
+  background-color: hsl(228, 28%, 20%);
+}
+
+.acc-container, .sub-heading, .curr-acc-container {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-bg, .card-sm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 150px;
+  height: 175px;
+  margin: 15px;
+  padding: 20px;
+  border-top: 5px solid;
+  border-radius: 5px;
+}
+
+.light-mode-card {
+  background-color: hsl(227, 47%, 96%);
+}
+
+.light-mode-card:hover {
+  background-color: rgba(99, 104, 126, .2) ;
+}
+
+.acc-name, .acc-status {
+  display: flex;
+}
+
+.acc-name img {
+  margin-right: 10px;
+}
+
+.acc-name p {
+  font-weight: 700;
+}
+
+.followers-num {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.followers {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.acc-status img {
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.acc-status p {
+  color: hsl(163, 72%, 41%);
+  font-weight: 700;
+}
+
+.youtube .acc-status p {
+  color: hsl(356, 69%, 56%);
+}
+
+.facebook {
+  border-color: hsl(208, 92%, 53%);
+}
+
+.twitter {
+  border-color: hsl(203, 89%, 53%);
+}
+
+.instagram {
+  position: relative;
+  border-color: transparent;
+}
+
+.instagram::before {
+  border-radius: 5px 5px 0 0;
+  height: 5px;
+  width: 100%;
+  background-image: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  content: '';
+  position: absolute;
+  top: -5px;
+}
+
+.youtube {
+  border-color: hsl(348, 97%, 39%);
+}
+
+.sub-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 20px;
+}
+
+.curr-acc-container {
+  margin-bottom: 20px;
+}
+
+.card-sm {
+  height: 90px;
+  flex: 1 1 235px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.top-row , .bottom-row {
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+.card-sm img {
+  margin-left: auto;
+  object-fit: contain;
+  padding: 5px;
+}
+
+.card-sm p {
+  display: inline-block;
+}
+
+.curr-followers-num {
+  font-size: 2rem;
+}
+
+.per-growth {
+  align-self: center;
+  color: hsl(163, 72%, 41%);
+}
+
+.per-shrink {
+  align-self: center;
+  color: hsl(356, 69%, 56%);
+}
+
+@media (max-width: 750px) {
+  .navbar {
+    display: block;
+  }
+
+  .toggle-button {
+    padding: 20px 0;
+    margin-top: 20px;
+    border-top: 2px solid hsl(228, 12%, 44%);
+  }
+
+  .switch {
+    margin-left: auto;
+  }
+}
